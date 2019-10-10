@@ -1,0 +1,7 @@
+Pillow
+Django
+pytz
+mysqlclient
+setuptools
+django-markdownx
+django_markdown2

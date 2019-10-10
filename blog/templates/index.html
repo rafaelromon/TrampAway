@@ -1,0 +1,55 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %} {% trans "Home" %} {% endblock title %}
+
+{% block stylesheets %}
+    {{ block.super }}
+{% endblock stylesheets %}
+
+{% block header %}
+    <header class="masthead" style="background-image: url({% static "img/home-bg.jpg" %})">
+        <div class="overlay"></div>
+        s
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Tramp Away</h1>
+                        <span class="subheading">{% trans "Your 101 Guide to Cheap Travelling" %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% for post in posts %}
+                    <div class="card">
+                        <img class="card-img-top" src="{{ post.header_image.url }}" style="height: 25vh; object-fit: cover" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.subtitle }}</p>
+                            <a href="{% url "view_post" post_id=post.id %}"
+                               class="btn btn-primary">{% trans "Read full article" %}</a>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+{% endblock javascripts %}

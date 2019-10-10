@@ -1,0 +1,49 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+{% load static %}
+{% load martortags %}
+
+{% block title %} {{ post.title }} {% endblock title %}
+
+{% block stylesheets %}
+    {{ block.super }}
+{% endblock stylesheets %}
+
+{% block header %}
+    <header class="masthead" style="background-image: url({{ post.header_image.url }})">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1>{{ post.title }}</h1>
+                        <h2 class="subheading">{{ post.subtitle }}</h2>
+                        <span class="meta">{% trans "Posted by" %}
+                            <a href="#">{{ post.author }}</a>
+                          on {{ post.date }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p>
+                        {{ post.text|safe_markdown }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+{% endblock javascripts %}
+
