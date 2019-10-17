@@ -1,9 +1,7 @@
 from django.contrib import admin
-from markdownx.admin import MarkdownxModelAdmin
-
+from django.db import models
 # Register your models here.
 from martor.widgets import AdminMartorWidget
-from django.db import models
 
 from blog.models import Post
 
@@ -19,4 +17,4 @@ class PostAdmin(admin.ModelAdmin):
     }
 
 
-admin.site.register(Post, MarkdownxModelAdmin)
+admin.site.register(Post, PostAdmin)

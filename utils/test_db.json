@@ -1,0 +1,60 @@
+[
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$150000$IYc5v6RV6HkN$ILvmwqUZpMcYRREdzEzejW3L7XV90TwsqzyD1A8mTG8=",
+      "last_login": "2019-10-08T10:19:00.383Z",
+      "is_superuser": true,
+      "username": "rafaelromon",
+      "first_name": "Rafael",
+      "last_name": "Rom\u00f3n Sagredo",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-10-02T06:24:50Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$150000$q81M7U0rHubO$wqCc15shqAE6TIQpYKORes3qbo4S3STIg7bAn0lkuJA=",
+      "last_login": "2019-10-17T09:04:45.071Z",
+      "is_superuser": true,
+      "username": "test",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-10-17T09:04:41.658Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "date": "2019-10-08",
+      "author": 1,
+      "title": "Test",
+      "subtitle": "Test",
+      "header_image": "articles/bangkok_9eTzZtx.jpg",
+      "text": ""
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+      "date": "2019-10-09",
+      "author": 1,
+      "title": "Thailand on a Budget",
+      "subtitle": "Lorem ipsum",
+      "header_image": "articles/ang-thong-1671770_1920.jpg",
+      "text": "# hello, This is Markdown Live Preview\r\n\r\n----\r\n## what is Markdown?\r\nsee [Wikipedia](https://en.wikipedia.org/wiki/Markdown)\r\n\r\n> Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz allowing people \"to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)\".\r\n\r\n----\r\n## usage\r\n1. Write markdown text in this textarea.\r\n2. Click 'HTML Preview' button.\r\n\r\n----\r\n## markdown quick reference\r\n# headers\r\n\r\n*emphasis*\r\n\r\n**strong**\r\n\r\n* list\r\n\r\n>block quote\r\n\r\n    code (4 spaces indent)\r\n[links](https://wikipedia.org)\r\n\r\n----\r\n## changelog\r\n* 17-Feb-2013 re-design\r\n\r\n----\r\n## thanks\r\n* [markdown-js](https://github.com/evilstreak/markdown-js)"
+    }
+  }
+]

@@ -20,7 +20,11 @@ from django.urls import path, include
 
 from TrampAway import settings
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    path('martor/', include('martor.urls')),
+]
+
+urlpatterns += i18n_patterns(
     path('martor/', include('martor.urls')),
     path('admin/', admin.site.urls, name="admin"),
     path("", include("blog.urls")),
