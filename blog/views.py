@@ -14,8 +14,6 @@ def index(request):
     pages_number = math.ceil(Post.objects.all().count() / 4)
     posts = Post.objects.all().order_by('-date')[(4 * current_page) - 4:4 * current_page]
 
-    # TODO enforce 5 pages
-
     if current_page > 2:
         lower_limit = current_page - 2
     else:
@@ -40,8 +38,10 @@ def view_post(request, post_id):
 
     return render(request, "post.html", context)
 
+
 def about(request):
     return render(request, "about.html")
+
 
 def contact(request):
     return render(request, "contact.html")
