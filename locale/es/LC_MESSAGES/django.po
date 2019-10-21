@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 21:57+0200\n"
+"POT-Creation-Date: 2019-10-21 23:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,11 +54,11 @@ msgstr "Autores"
 msgid "date"
 msgstr "fecha"
 
-#: blog/models.py:36
+#: blog/models.py:36 blog/models.py:86
 msgid "name"
 msgstr "nombre"
 
-#: blog/models.py:37
+#: blog/models.py:37 blog/models.py:87
 msgid "email"
 msgstr "email"
 
@@ -70,13 +70,16 @@ msgstr "leido"
 msgid "message"
 msgstr "mensaje"
 
-#: blog/models.py:45
-msgid "Comment"
-msgstr "Comentario"
+#: blog/models.py:45 blog/templates/contact.html:55
+#: blog/templates/contact.html:56 blog/templates/post.html:103
+#: blog/templates/post.html:104
+msgid "Message"
+msgstr "Mensaje"
 
 #: blog/models.py:46
-msgid "Comments"
-msgstr "Comentarios"
+#: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
+msgid "Messages"
+msgstr "Mensajes"
 
 #: blog/models.py:54
 msgid "author"
@@ -110,6 +113,26 @@ msgstr "Articulo"
 msgid "Articles"
 msgstr "Articulos"
 
+#: blog/models.py:85
+msgid "date_time"
+msgstr "fecha_hora"
+
+#: blog/models.py:89
+msgid "parent_post"
+msgstr "articulo_padre"
+
+#: blog/models.py:91
+msgid "comment"
+msgstr "comentario"
+
+#: blog/models.py:95
+msgid "Comment"
+msgstr "Comentario"
+
+#: blog/models.py:96 blog/templates/post.html:62
+msgid "Comments"
+msgstr "Comentarios"
+
 #: blog/templates/about.html:6 blog/templates/top_navigation.html:23
 msgid "About"
 msgstr "Sobre Nosotros"
@@ -130,16 +153,17 @@ msgid ""
 "that's a bit of an exaggeration, but at least we aim to make international "
 "travel more accessible."
 msgstr ""
-"En TrampAway siempre hemos creido que viajar es una esperiencia unica "
-"que te ayuda a expandir tus horizontes, por eso, nuestro objetivo principal "
-"es ayudarte a viaja por el mundo sin gastarte in centimo, bueno igual "
-"eso es una pequeña exageración, pero por lo menos intentamos hacer que los "
-"viajes internacionales seam mas accesibles"
+"En TrampAway siempre hemos creido que viajar es una esperiencia unica que te "
+"ayuda a expandir tus horizontes, por eso, nuestro objetivo principal es "
+"ayudarte a viaja por el mundo sin gastarte in centimo, bueno igual eso es "
+"una pequeña exageración, pero por lo menos intentamos hacer que los viajes "
+"internacionales seam mas accesibles"
 
 #: blog/templates/about.html:36
 msgid ""
 "We hope that with our help you'll be able to make your dream trip a reality."
-msgstr "Esperemos que con nuestra ayudo consigas llevar a cabo el viaje de tus sueños"
+msgstr ""
+"Esperemos que con nuestra ayudo consigas llevar a cabo el viaje de tus sueños"
 
 #: blog/templates/about.html:38 blog/templates/author.html:20
 msgid "Meet the Authors"
@@ -160,15 +184,34 @@ msgstr "Contacto"
 
 #: blog/templates/contact.html:20
 msgid "If you have any questions or suggestions don't hesitate to contact us"
-msgstr "Si tienes alguna pregunta o sugerencia no dudes en contactar con nosotros"
+msgstr ""
+"Si tienes alguna pregunta o sugerencia no dudes en contactar con nosotros"
 
-#: blog/templates/contact.html:38
+#: blog/templates/contact.html:37 blog/templates/contact.html:38
+#: blog/templates/post.html:85 blog/templates/post.html:86
 msgid "Name"
 msgstr "Nombre"
 
-#: blog/templates/contact.html:40
+#: blog/templates/contact.html:40 blog/templates/post.html:88
 msgid "Please enter your name."
 msgstr "Por favor introduce tu nombre"
+
+#: blog/templates/contact.html:46 blog/templates/contact.html:47
+#: blog/templates/post.html:94 blog/templates/post.html:95
+msgid "Email Address"
+msgstr ""
+
+#: blog/templates/contact.html:49 blog/templates/post.html:97
+msgid "Please enter your email address."
+msgstr "Por favor introduce tu direccion de email"
+
+#: blog/templates/contact.html:58 blog/templates/post.html:106
+msgid "Please enter a message."
+msgstr "Por favor introduce tu mensaje"
+
+#: blog/templates/contact.html:65 blog/templates/post.html:113
+msgid "Send"
+msgstr "Enviar"
 
 #: blog/templates/footer.html:9
 msgid "About Us"
@@ -186,7 +229,11 @@ msgstr "Inicio"
 msgid "Your 101 Guide to Cheap Travelling"
 msgstr "Tu Guia para el Viaje Barato"
 
-#: blog/templates/index.html:101 blog/templates/post.html:71
+#: blog/templates/index.html:52
+msgid "Read More"
+msgstr "Leer Mas"
+
+#: blog/templates/index.html:101 blog/templates/post.html:127
 msgid "Featured Posts"
 msgstr "Articulos Destacados"
 
@@ -194,17 +241,21 @@ msgstr "Articulos Destacados"
 msgid "profile picture"
 msgstr "foto de perfil"
 
-#: blog/views.py:75
-msgid "Thank you for contacting us"
-msgstr "Gracias por contactar con nosotros"
+#: blog/templates/post.html:81
+msgid "Leave a Comment"
+msgstr "Deja un Comentario"
 
-#: blog/views.py:78
+#: blog/views.py:61
+msgid "Thank you for commenting"
+msgstr "Gracias por dejar un comentario"
+
+#: blog/views.py:64 blog/views.py:103
 msgid "Form not valid."
 msgstr "El formulario no es valido"
 
-#: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
-msgid "Messages"
-msgstr ""
+#: blog/views.py:100
+msgid "Thank you for contacting us"
+msgstr "Gracias por contactar con nosotros"
 
 #: venv/lib/python3.7/site-packages/django/contrib/sitemaps/apps.py:7
 msgid "Site Maps"
@@ -871,275 +922,275 @@ msgstr ""
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Monday"
-msgstr ""
+msgstr "Lunes"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Tuesday"
-msgstr ""
+msgstr "Martes"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Wednesday"
-msgstr ""
+msgstr "Miercoles"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Thursday"
-msgstr ""
+msgstr "Jueves"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Friday"
-msgstr ""
+msgstr "Viernes"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:7
 msgid "Saturday"
-msgstr ""
+msgstr "Sabado"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:7
 msgid "Sunday"
-msgstr ""
+msgstr "Domingo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Mon"
-msgstr ""
+msgstr "Lun"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Tue"
-msgstr ""
+msgstr "Mar"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Wed"
-msgstr ""
+msgstr "Mie"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Thu"
-msgstr ""
+msgstr "Jue"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Fri"
-msgstr ""
+msgstr "Vi"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:11
 msgid "Sat"
-msgstr ""
+msgstr "Sab"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:11
 msgid "Sun"
-msgstr ""
+msgstr "Dom"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "January"
-msgstr ""
+msgstr "Enero"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "February"
-msgstr ""
+msgstr "Febrero"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "March"
-msgstr ""
+msgstr "Marzo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "May"
-msgstr ""
+msgstr "Mayo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "June"
-msgstr ""
+msgstr "Junio"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "July"
-msgstr ""
+msgstr "Julio"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "September"
-msgstr ""
+msgstr "Septiembre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "October"
-msgstr ""
+msgstr "Octubre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "November"
-msgstr ""
+msgstr "Noviembre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:16
 msgid "December"
-msgstr ""
+msgstr "Diciembre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "jan"
-msgstr ""
+msgstr "en"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "feb"
-msgstr ""
+msgstr "feb"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "apr"
-msgstr ""
+msgstr "abr"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "may"
-msgstr ""
+msgstr "mayo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "aug"
-msgstr ""
+msgstr "ago"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "sep"
-msgstr ""
+msgstr "sep"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "oct"
-msgstr ""
+msgstr "oct"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "dec"
-msgstr ""
+msgstr "dic"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:23
 msgctxt "abbrev. month"
 msgid "Jan."
-msgstr ""
+msgstr "Ene."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:24
 msgctxt "abbrev. month"
 msgid "Feb."
-msgstr ""
+msgstr "Feb."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:25
 msgctxt "abbrev. month"
 msgid "March"
-msgstr ""
+msgstr "Marzo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:26
 msgctxt "abbrev. month"
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:27
 msgctxt "abbrev. month"
 msgid "May"
-msgstr ""
+msgstr "Mayo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:28
 msgctxt "abbrev. month"
 msgid "June"
-msgstr ""
+msgstr "Junio"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:29
 msgctxt "abbrev. month"
 msgid "July"
-msgstr ""
+msgstr "Julio"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:30
 msgctxt "abbrev. month"
 msgid "Aug."
-msgstr ""
+msgstr "Ag."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:31
 msgctxt "abbrev. month"
 msgid "Sept."
-msgstr ""
+msgstr "Sept."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:32
 msgctxt "abbrev. month"
 msgid "Oct."
-msgstr ""
+msgstr "Oct."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:33
 msgctxt "abbrev. month"
 msgid "Nov."
-msgstr ""
+msgstr "Nov."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:34
 msgctxt "abbrev. month"
 msgid "Dec."
-msgstr ""
+msgstr "Dic."
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:37
 msgctxt "alt. month"
 msgid "January"
-msgstr ""
+msgstr "Enero"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:38
 msgctxt "alt. month"
 msgid "February"
-msgstr ""
+msgstr "Febrero"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:39
 msgctxt "alt. month"
 msgid "March"
-msgstr ""
+msgstr "Marzo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:40
 msgctxt "alt. month"
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:41
 msgctxt "alt. month"
 msgid "May"
-msgstr ""
+msgstr "Mayo"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:42
 msgctxt "alt. month"
 msgid "June"
-msgstr ""
+msgstr "Junio"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:43
 msgctxt "alt. month"
 msgid "July"
-msgstr ""
+msgstr "Julio"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:44
 msgctxt "alt. month"
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:45
 msgctxt "alt. month"
 msgid "September"
-msgstr ""
+msgstr "Septiembre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:46
 msgctxt "alt. month"
 msgid "October"
-msgstr ""
+msgstr "Octubre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:47
 msgctxt "alt. month"
 msgid "November"
-msgstr ""
+msgstr "Noviembre"
 
 #: venv/lib/python3.7/site-packages/django/utils/dates.py:48
 msgctxt "alt. month"
 msgid "December"
-msgstr ""
+msgstr "Diciembre"
 
 #: venv/lib/python3.7/site-packages/django/utils/ipv6.py:8
 msgid "This is not a valid IPv6 address."

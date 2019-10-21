@@ -4,8 +4,8 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.utils.translation import gettext as _
 
-from blog.forms import MessageForm
-from blog.models import Post, Author, Comment
+from blog.forms import MessageForm, CommentForm
+from blog.models import Post, Author, Message, Comment
 
 
 def index(request):
@@ -43,7 +43,32 @@ def view_post(request, post_id):
     post = Post.objects.get(id=post_id)
     featured_posts = Post.objects.all().filter(featured=True)
 
-    context = {"post": post, "featured_posts": featured_posts}
+    if request.method == 'POST':
+
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+
+            comment = {
+                "name": form.cleaned_data["name"],
+                "email": form.cleaned_data["email"],
+                "comment": form.cleaned_data["comment"],
+                "parent_post": post
+            }
+
+            Comment.objects.create(**comment)
+
+            messages.add_message(request, messages.SUCCESS, _('Thank you for commenting'))
+
+        else:
+            messages.add_message(request, messages.ERROR, _('Form not valid.'))
+
+    else:
+        form = CommentForm()
+
+    comments = Comment.objects.filter(parent_post=post)
+
+    context = {"post": post, "featured_posts": featured_posts, "form": form, "comments": comments}
 
     return render(request, "post.html", context)
 
@@ -70,7 +95,7 @@ def contact(request):
                 "message": form.cleaned_data["message"]
             }
 
-            Comment.objects.create(**comment)
+            Message.objects.create(**comment)
 
             messages.add_message(request, messages.SUCCESS, _('Thank you for contacting us'))
 

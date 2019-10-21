@@ -31,7 +31,7 @@ class Author(models.Model):
         return self.user.get_full_name()
 
 
-class Comment(models.Model):
+class Message(models.Model):
     date = models.DateField(default=datetime.date.today, verbose_name=_("date"))
     name = models.CharField(max_length=124, verbose_name=_("name"))
     email = models.CharField(max_length=124, verbose_name=_("email"))
@@ -42,8 +42,8 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-date']
-        verbose_name = _("Comment")
-        verbose_name_plural = _("Comments")
+        verbose_name = _("Message")
+        verbose_name_plural = _("Messages")
 
     def __str__(self):
         return self.name
@@ -79,3 +79,21 @@ class Post(models.Model):
     @property
     def formatted_markdown(self):
         return markdownify(self.text)
+
+
+class Comment(models.Model):
+    date_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=_("date_time"))
+    name = models.CharField(max_length=124, verbose_name=_("name"))
+    email = models.CharField(max_length=124, verbose_name=_("email"))
+
+    parent_post = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name=_("parent_post"))
+
+    comment = models.TextField(verbose_name=_("comment"))
+
+    class Meta:
+        ordering = ['-date_time']
+        verbose_name = _("Comment")
+        verbose_name_plural = _("Comments")
+
+    def __str__(self):
+        return self.name
