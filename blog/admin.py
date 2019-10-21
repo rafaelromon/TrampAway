@@ -3,7 +3,7 @@ from django.db import models
 # Register your models here.
 from martor.widgets import AdminMartorWidget
 
-from blog.models import Post, Author, Message
+from blog.models import Post, Author, Message, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -48,3 +48,4 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(Post, PostAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Message, MessageAdmin)
+admin.site.register(Comment, CommentAdmin)
