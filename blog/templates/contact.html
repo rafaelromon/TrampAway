@@ -11,16 +11,20 @@
 {% block header %}
     <header class="masthead" style="background-image: url({% static "img/contact-bg.jpg" %})">
         <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
+        <header class="masthead" style="height: 20vh; background-image: url({% static "img/home-bg.jpg" %})">
+            <div class="overlay"></div>
+            <div class="d-flex align-items-center" style="height: 20vh">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="page-heading">
-                        <h1>Contact Me</h1>
-                        <span class="subheading">Have questions? I have answers.</span>
+                    <div class="text-center text-white align-self-stretcht">
+                        <div class="page-heading">
+                            <h2>Contact Me</h2>
+                            <span class="subheading">Have questions? I have answers.</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
+
     </header>
 {% endblock header %}
 

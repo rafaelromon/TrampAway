@@ -8,9 +8,30 @@ from martor.models import MartorField
 from martor.utils import markdownify
 
 
+class Author(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_("user"))
+    description = models.TextField(verbose_name=_("description"))
+
+    profile_picture = models.ImageField(null=True, blank=True, upload_to="authors", verbose_name=_("header image"))
+
+    def image_tag(self):
+        return mark_safe('<img src="%s" height="150"/>' % self.profile_picture.url)
+
+    image_tag.short_description = _('Profile Picture')
+    image_tag.allow_tags = True
+
+    class Meta:
+        ordering = ['-user']
+        verbose_name = _("Author")
+        verbose_name_plural = _("Authors")
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+
 class Post(models.Model):
     date = models.DateField(default=datetime.date.today, verbose_name=_("date"))
-    author = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_("author"))
+    author = models.ForeignKey(Author, on_delete=models.PROTECT, verbose_name=_("author"))
 
     title = models.CharField(max_length=124, verbose_name=_("title"))
     subtitle = models.CharField(max_length=124, verbose_name=_("subtitle"))

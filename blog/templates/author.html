@@ -1,0 +1,94 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %} {% trans "Author" %}: {{ author }} {% endblock title %}
+
+{% block stylesheets %}
+    {{ block.super }}
+{% endblock stylesheets %}
+
+{% block header %}
+    <header class="masthead" style="background-image: url({% static "img/author-bg.jpg" %})">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading ">
+                        <h1>{% trans "Meet the Authors" %}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="col-lg-10 col-md-10 mx-auto">
+            <div class="row">
+                <div class="col-sm author-picture">
+                    <img src="{{ author.profile_picture.url }}" class="img-thumbnail" alt="profile picture">
+                </div>
+                <div class="col-sm">
+                    <h2>{{ author.user.get_full_name }}</h2>
+                    <p>{{ author.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <h1 class="text-bl">{% trans "Latest Posts" %}</h1>
+                {% for post in posts %}
+                    <div class="post-preview ">
+                        <a href="{% url "view_post" post.pk %}">
+                            <h4 class="post-title">
+                                {{ post.title }}
+                            </h4>
+                            <h5 class="post-subtitle">
+                                {{ post.subtitle }}
+                            </h5>
+                        </a>
+                        <p class="post-meta">{% trans "Posted on" %} {{ post.date }}</p>
+                    </div>
+                    <hr>
+                {% endfor %}
+                <!-- Pager -->
+                <div class="clearfix">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+
+                            <li class="page-item {% if current_page == 1 %} disabled {% endif %}">
+                                <a class="page-link" href="?p={{ current_page|add:"-1" }}">&lt;</a>
+                            </li>
+
+                            {% for p in nav_pages %}
+                                {% if current_page == p %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ p }}<span class="sr-only">(current)</span></span>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="?p={{ p }}">{{ p }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            <li class="page-item {% if current_page == pages_number %} disabled {% endif %}">
+                                <a class="page-link" href="?p={{ current_page|add:"1" }}">&gt;</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+{% endblock javascripts %}

@@ -1,8 +1,9 @@
 {% extends "base_site.html" %}
 {% load i18n %}
 {% load static %}
+{% load blog_filters %}
 
-{% block title %} {% trans "Contact" %} {% endblock title %}
+{% block title %} {% trans "About" %} {% endblock title %}
 
 {% block stylesheets %}
     {{ block.super }}
@@ -15,8 +16,8 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="page-heading">
-                        <h1>About Me</h1>
-                        <span class="subheading">This is what I do.</span>
+                        <h1>About TrampAway</h1>
+                        <span class="subheading">This is what we do.</span>
                     </div>
                 </div>
             </div>
@@ -28,16 +29,29 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <p>TrampAway is a travel blog made for a university assingment</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
-                    voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
-                    ducimus consectetur?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
-                    architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum
-                    in officia voluptas voluptatibus, minus!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid
-                    ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit
-                    tempora!</p>
+                <p>{% trans "Here in TrampAway we have always believed that traveling is a life-changing experience that helps youbroaden your horizons, as such, our main objective is to help you travel the world without spending a single penny, well maybe that's a bit of an exaggeration, but at least we aim to make international travel more accessible." %}</p>
+                <p>{% trans "We hope that with our help you'll be able to make your dream trip a reality." %}</p>
+
+                <h4>{% trans "Meet the Authors" %}</h4>
+                <br>
+                <div class="card-deck">
+                    {% for author in authors %}
+                        <div class="card mb-2" style="width: 18rem;">
+                            <img class="card-img-top"
+                                 src="{{ author.profile_picture.url }}"
+                                 alt="profile picture">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ author.user.get_full_name }}</h5>
+                                <a href="{% url "view_author" author.user.username %}"
+                                   class="btn btn-primary">{% trans "View Profile" %}</a>
+                            </div>
+                        </div>
+                        {% if forloop.counter|multiple:3 %}
+                            <div class="w-100 d-none d-md-block d-lg-block"><!-- wrap every 3 on md--></div>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
             </div>
         </div>
     </div>

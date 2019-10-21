@@ -1,0 +1,9 @@
+div.site-heading-small {
+    height: 40vh;
+}
+
+div.author-picture {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
