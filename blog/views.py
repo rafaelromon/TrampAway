@@ -1,8 +1,11 @@
 import math
 
+from django.contrib import messages
 from django.shortcuts import render
+from django.utils.translation import gettext as _
 
-from blog.models import Post, Author
+from blog.forms import MessageForm
+from blog.models import Post, Author, Comment
 
 
 def index(request):
@@ -50,7 +53,32 @@ def about(request):
 
 
 def contact(request):
-    return render(request, "contact.html")
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+
+        form = MessageForm(request.POST)
+
+        if form.is_valid():
+
+            comment = {
+                "name": form.cleaned_data["name"],
+                "email": form.cleaned_data["email"],
+                "message": form.cleaned_data["message"]
+            }
+
+            Comment.objects.create(**comment)
+
+            messages.add_message(request, messages.SUCCESS, _('Thank you for contacting us'))
+
+        else:
+            messages.add_message(request, messages.ERROR, _('Form not valid.'))
+
+    else:
+        form = MessageForm()
+
+    context = {"form": form}
+
+    return render(request, "contact.html", context)
 
 
 def view_author(request, username):

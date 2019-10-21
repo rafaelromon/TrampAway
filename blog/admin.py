@@ -3,7 +3,7 @@ from django.db import models
 # Register your models here.
 from martor.widgets import AdminMartorWidget
 
-from blog.models import Post, Author
+from blog.models import Post, Author, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -24,5 +24,16 @@ class AuthorAdmin(admin.ModelAdmin):
     readonly_fields = ('image_tag',)
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('date', 'name', 'email', 'read')
+    list_display_links = ('name',)
+    ordering = ('-date',)
+
+    list_filter = ('read',)
+
+    readonly_fields = ('date', 'name', 'email', 'message')
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Author, AuthorAdmin)
+admin.site.register(Comment, CommentAdmin)

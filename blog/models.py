@@ -29,6 +29,24 @@ class Author(models.Model):
         return self.user.get_full_name()
 
 
+class Comment(models.Model):
+    date = models.DateField(default=datetime.date.today, verbose_name=_("date"))
+    name = models.CharField(max_length=124, verbose_name=_("name"))
+    email = models.CharField(max_length=124, verbose_name=_("email"))
+
+    read = models.BooleanField(default=False, verbose_name=_("read"))
+
+    message = models.TextField(verbose_name=_("message"))
+
+    class Meta:
+        ordering = ['-date']
+        verbose_name = _("Comment")
+        verbose_name_plural = _("Comments")
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     date = models.DateField(default=datetime.date.today, verbose_name=_("date"))
     author = models.ForeignKey(Author, on_delete=models.PROTECT, verbose_name=_("author"))
