@@ -48,6 +48,7 @@
         {{ header }}
     {% endblock header %}
 
+    <br>
     <div class="col-lg-8 col-md-10 mx-auto">
         {% for message in messages %}
             <div class="alert alert-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}danger{% else %}success{% endif %}

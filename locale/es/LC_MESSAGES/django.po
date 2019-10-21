@@ -20,182 +20,187 @@ msgstr ""
 
 #: blog/apps.py:8
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: blog/models.py:12
 msgid "user"
-msgstr ""
+msgstr "usuario"
 
 #: blog/models.py:13
 msgid "description"
-msgstr ""
+msgstr "descripción"
 
 #: blog/models.py:15
 msgid "founder"
-msgstr ""
+msgstr "fundador"
 
 #: blog/models.py:17 blog/models.py:61
 msgid "header image"
-msgstr ""
+msgstr "imagen de cabecera"
 
 #: blog/models.py:22
 msgid "Profile Picture"
-msgstr ""
+msgstr "Foto de Perfil"
 
 #: blog/models.py:27 blog/templates/author.html:5
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: blog/models.py:28
 msgid "Authors"
-msgstr ""
+msgstr "Autores"
 
 #: blog/models.py:35 blog/models.py:53
 msgid "date"
-msgstr ""
+msgstr "fecha"
 
 #: blog/models.py:36
 msgid "name"
-msgstr ""
+msgstr "nombre"
 
 #: blog/models.py:37
 msgid "email"
-msgstr ""
+msgstr "email"
 
 #: blog/models.py:39
 msgid "read"
-msgstr ""
+msgstr "leido"
 
 #: blog/models.py:41
 msgid "message"
-msgstr ""
+msgstr "mensaje"
 
 #: blog/models.py:45
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 #: blog/models.py:46
 msgid "Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #: blog/models.py:54
 msgid "author"
-msgstr ""
+msgstr "autor"
 
 #: blog/models.py:56
 msgid "title"
-msgstr ""
+msgstr "titulo"
 
 #: blog/models.py:57
 msgid "subtitle"
-msgstr ""
+msgstr "subtitulo"
 
 #: blog/models.py:59
 msgid "featured"
-msgstr ""
+msgstr "destacado"
 
 #: blog/models.py:66
 msgid "Header Image"
-msgstr ""
+msgstr "Imagen de Cabecera"
 
 #: blog/models.py:69
 msgid "text"
-msgstr ""
+msgstr "texto"
 
 #: blog/models.py:73
 msgid "Article"
-msgstr ""
+msgstr "Articulo"
 
 #: blog/models.py:74
 msgid "Articles"
-msgstr ""
+msgstr "Articulos"
 
 #: blog/templates/about.html:6 blog/templates/top_navigation.html:23
 msgid "About"
-msgstr ""
+msgstr "Sobre Nosotros"
 
 #: blog/templates/about.html:21
 msgid "About TrampAway"
-msgstr ""
+msgstr "Sobre TrampAway"
 
 #: blog/templates/about.html:22 blog/templates/author.html:21
 msgid "This is what we do."
-msgstr ""
+msgstr "Esto es lo que hacemos."
 
 #: blog/templates/about.html:35
 msgid ""
 "Here in TrampAway we have always believed that traveling is a life-changing "
-"experience that helps youbroaden your horizons, as such, our main objective "
+"experience that helps you broaden your horizons, as such, our main objective "
 "is to help you travel the world without spending a single penny, well maybe "
 "that's a bit of an exaggeration, but at least we aim to make international "
 "travel more accessible."
 msgstr ""
+"En TrampAway siempre hemos creido que viajar es una esperiencia unica "
+"que te ayuda a expandir tus horizontes, por eso, nuestro objetivo principal "
+"es ayudarte a viaja por el mundo sin gastarte in centimo, bueno igual "
+"eso es una pequeña exageración, pero por lo menos intentamos hacer que los "
+"viajes internacionales seam mas accesibles"
 
 #: blog/templates/about.html:36
 msgid ""
 "We hope that with our help you'll be able to make your dream trip a reality."
-msgstr ""
+msgstr "Esperemos que con nuestra ayudo consigas llevar a cabo el viaje de tus sueños"
 
 #: blog/templates/about.html:38 blog/templates/author.html:20
 msgid "Meet the Authors"
-msgstr ""
+msgstr "Conoce a los Autores"
 
 #: blog/templates/about.html:49
 msgid "View Profile"
-msgstr ""
+msgstr "Ver Perfil"
 
 #: blog/templates/author.html:52
 msgid "Latest Posts"
-msgstr ""
+msgstr "Ultimos Articulos"
 
 #: blog/templates/contact.html:5 blog/templates/contact.html:19
 #: blog/templates/top_navigation.html:26
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #: blog/templates/contact.html:20
 msgid "If you have any questions or suggestions don't hesitate to contact us"
-msgstr ""
+msgstr "Si tienes alguna pregunta o sugerencia no dudes en contactar con nosotros"
 
 #: blog/templates/contact.html:38
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: blog/templates/contact.html:40
 msgid "Please enter your name."
-msgstr ""
+msgstr "Por favor introduce tu nombre"
 
 #: blog/templates/footer.html:9
 msgid "About Us"
-msgstr ""
+msgstr "Sobre Nosotros"
 
 #: blog/templates/footer.html:16
 msgid "Follow Us"
-msgstr ""
+msgstr "Siguenos"
 
 #: blog/templates/index.html:5 blog/templates/top_navigation.html:20
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 #: blog/templates/index.html:20
 msgid "Your 101 Guide to Cheap Travelling"
-msgstr ""
+msgstr "Tu Guia para el Viaje Barato"
 
 #: blog/templates/index.html:101 blog/templates/post.html:71
 msgid "Featured Posts"
-msgstr ""
+msgstr "Articulos Destacados"
 
 #: blog/templates/post.html:54
 msgid "profile picture"
-msgstr ""
+msgstr "foto de perfil"
 
 #: blog/views.py:75
 msgid "Thank you for contacting us"
-msgstr ""
+msgstr "Gracias por contactar con nosotros"
 
 #: blog/views.py:78
 msgid "Form not valid."
-msgstr ""
+msgstr "El formulario no es valido"
 
 #: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
