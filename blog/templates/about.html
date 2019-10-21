@@ -10,23 +10,26 @@
 {% endblock stylesheets %}
 
 {% block header %}
-    <header class="masthead" style="background-image: url({% static 'img/about-bg.jpg' %})">
-        <div class="overlay"></div>
+    <section class="banner_area"
+             style="background: url({% static "img/about-bg.jpg" %}) no-repeat scroll center left;
+                     background-size: 100vh">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="page-heading">
-                        <h1>About TrampAway</h1>
-                        <span class="subheading">This is what we do.</span>
+            <div class="row banner_inner">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-7">
+                    <div class="banner_content text-center">
+                        <h2>{% trans "About TrampAway" %}</h2>
+                        <span class="subheading">{% trans "This is what we do." %}</span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 {% endblock header %}
 
 {% block content %}
     <div class="container">
+        <br>
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <p>{% trans "Here in TrampAway we have always believed that traveling is a life-changing experience that helps youbroaden your horizons, as such, our main objective is to help you travel the world without spending a single penny, well maybe that's a bit of an exaggeration, but at least we aim to make international travel more accessible." %}</p>

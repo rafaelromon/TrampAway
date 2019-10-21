@@ -9,32 +9,28 @@
 {% endblock stylesheets %}
 
 {% block header %}
-    <header class="masthead" style="background-image: url({% static "img/contact-bg.jpg" %})">
-        <div class="overlay"></div>
-        <header class="masthead" style="background-image: url({% static "img/home-bg.jpg" %})">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-10 mx-auto">
-                        <div class="page-heading">
-                            <h1>Contact Us</h1>
-                            <span class="subheading">Have questions? We may be able to help you.</span>
-                        </div>
+    <section class="banner_area"
+             style="background: url({% static "img/contact-bg.jpg" %}) no-repeat scroll center left; background-size: 100vh">
+        <div class="container">
+            <div class="row banner_inner">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-7">
+                    <div class="banner_content text-center">
+                        <h2>{% trans "Contact" %}</h2>
+                        <span class="subheading">{% trans "If you have any questions or suggestions don't hesitate to contact us" %}</span>
                     </div>
                 </div>
             </div>
-        </header>
-
-    </header>
+        </div>
+    </section>
 {% endblock header %}
 
 {% block content %}
     <div class="container">
+        <br>
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <p>{% trans "If you have any questions or suggestions don't hesitate to contact us" %}</p>
                 <form name="sentMessage" id="contactForm" method="post">
-
                     {% csrf_token %}
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">

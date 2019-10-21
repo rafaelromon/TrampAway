@@ -163,7 +163,7 @@ If you are not that tech savvy feel free to ask me any questions via email, just
 
 ## Credits
 
-- Bootstrap Template based on [Clean Blog](https://startbootstrap.com/themes/clean-blog/) by Start Bootstrap, 
+- Bootstrap Template based on [Opium](https://colorlib.com/wp/template/opium/) by Colorlib, 
 - All static photos taken from [Unsplash](https://www.unsplash.com), see detailed information [here](CREDITS.MD).
 - Favicon Icon from [Icons8](https://icons8.com/icon/86906/around-the-globe)
 

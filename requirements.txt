@@ -4,4 +4,4 @@ pytz
 mysqlclient
 setuptools
 martor
-django-cleanup
+django-unused-media

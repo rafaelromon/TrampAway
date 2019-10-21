@@ -10,37 +10,81 @@
 {% endblock stylesheets %}
 
 {% block header %}
-    <header class="masthead" style="background-image: url({{ post.header_image.url }})">
-        <div class="overlay"></div>
+    <section class="banner_area"
+             style="background: url({{ post.header_image.url }}) no-repeat scroll center left;
+                     background-size: 100vh">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="post-heading">
-                        <h1>{{ post.title }}</h1>
-                        <h2 class="subheading">{{ post.subtitle }}</h2>
-                        <span class="meta">{% trans "Posted by" %}
-                            <a href="{% url "view_author" post.author.user.username %}">{{ post.author }}</a>
-                          on {{ post.date }}</span>
+            <div class="row banner_inner">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-7">
+                    <div class="banner_content text-center">
+                        <div class="cat">
+                            <a href="{% url "view_author" post.author.user.username %}"><i
+                                    class="fa fa-user"
+                                    aria-hidden="true"></i> {{ post.author }}</a>
+                            <i class="fa fa-calendar"
+                               aria-hidden="true"></i> {{ post.date }}
+                        </div>
+                        <h4>{{ post.title }}</h4>
+                        <p>{{ post.subtitle }}</p>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 {% endblock header %}
 
 {% block content %}
-    <!-- Post Content -->
-    <article>
+
+    <section class="blog_area p_120 single-post-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <p>
+                <div class="col-lg-8">
+                    <div class="main_blog_details">
+                        <h4>{{ post.title }}</h4>
+                        <div class="user_details">
+                            <div class="float-right">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5>{{ post.author }}</h5>
+                                        <p>{{ post.date }}</p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <img src="{{ post.author.profile_picture.url }}" style="height: 5vh "
+                                             alt="{% trans "profile picture" %}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         {{ post.text|safe_markdown }}
-                    </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget author_widget">
+                            <img class="author_img img-fluid" src="{{ post.author.profile_picture.url }}" alt="">
+                            <h4>{{ post.author }}</h4>
+                            <p>{{ post.author.description|truncatechars:150 }}</p>
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">{% trans "Featured Posts" %}</h3>
+                            {% for post in featured_posts %}
+                                <div class="media post_item">
+                                    <img src="{{ post.header_image.url }}" style="width: 10vh; object-fit: cover"
+                                         alt="post">
+                                    <div class="media-body">
+                                        <a href="{% url "view_post" post.pk %}"><h3>{{ post.title }}</h3></a>
+                                        <p>{{ post.date }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </aside>
+                    </div>
                 </div>
             </div>
         </div>
-    </article>
+    </section>
 {% endblock content %}
 
 {% block javascripts %}

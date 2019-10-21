@@ -9,21 +9,26 @@
 {% endblock stylesheets %}
 
 {% block header %}
-    <header class="masthead" style="background-image: url({% static "img/author-bg.jpg" %})">
-        <div class="overlay"></div>
+
+    <section class="banner_area"
+             style="background: url({% static "img/author-bg.jpg" %}) no-repeat scroll center left;background-size: 100vh">
         <div class="container">
-            <div class="row ">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading ">
-                        <h1>{% trans "Meet the Authors" %}</h1>
+            <div class="row banner_inner">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-7">
+                    <div class="banner_content text-center">
+                        <h2>{% trans "Meet the Authors" %}</h2>
+                        <span class="subheading">{% trans "This is what we do." %}</span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 {% endblock header %}
 
 {% block content %}
+
+    <br>
 
     <div class="container">
         <div class="col-lg-10 col-md-10 mx-auto">
@@ -45,27 +50,42 @@
         <div class="row">
             <div class="col-lg-10 col-md-10 mx-auto">
                 <h1 class="text-bl">{% trans "Latest Posts" %}</h1>
-                {% for post in posts %}
-                    <div class="post-preview ">
-                        <a href="{% url "view_post" post.pk %}">
-                            <h4 class="post-title">
-                                {{ post.title }}
-                            </h4>
-                            <h5 class="post-subtitle">
-                                {{ post.subtitle }}
-                            </h5>
-                        </a>
-                        <p class="post-meta">{% trans "Posted on" %} {{ post.date }}</p>
-                    </div>
-                    <hr>
-                {% endfor %}
-                <!-- Pager -->
-                <div class="clearfix">
-                    <nav>
-                        <ul class="pagination justify-content-center">
+                <br>
+                <div class="blog_left_sidebar">
+                    {% for post in posts %}
+                        <article class="blog_style1">
+                            <div class="blog_img">
+                                <img class="img-fluid" style="height: 30vh; width: 75vh; object-fit: cover"
+                                     src="{{ post.header_image.url }}" alt="{{ post.header_image.name }}">
+                            </div>
+                            <div class="blog_text">
+                                <div class="blog_text_inner">
 
-                            <li class="page-item {% if current_page == 1 %} disabled {% endif %}">
-                                <a class="page-link" href="?p={{ current_page|add:"-1" }}">&lt;</a>
+                                    <div class="cat">
+                                        <a href="{% url "view_author" post.author.user.username %}"><i
+                                                class="fa fa-user"
+                                                aria-hidden="true"></i> {{ post.author }}</a>
+                                        <i class="fa fa-calendar"
+                                           aria-hidden="true"></i> {{ post.date }}
+                                    </div>
+                                    <a href="{% url "view_post" post.pk %}"><h4>{{ post.title }}</h4></a>
+                                    <p>{{ post.subtitle }}</p>
+                                    <a class="blog_btn" href="{% url "view_post" post.pk %}">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+                <div class="blog_left_sidebar">
+
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="?p={{ current_page|add:"-1" }}" class="page-link" aria-label="Previous">
+		                                    <span aria-hidden="true">
+		                                        <span class="lnr lnr-chevron-left"></span>
+		                                    </span>
+                                </a>
                             </li>
 
                             {% for p in nav_pages %}
@@ -78,8 +98,12 @@
                                 {% endif %}
                             {% endfor %}
 
-                            <li class="page-item {% if current_page == pages_number %} disabled {% endif %}">
-                                <a class="page-link" href="?p={{ current_page|add:"1" }}">&gt;</a>
+                            <li class="page-item">
+                                <a href="?p={{ current_page|add:"1" }}" class="page-link" aria-label="Next">
+		                                    <span aria-hidden="true">
+		                                        <span class="lnr lnr-chevron-right"></span>
+		                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </nav>

@@ -12,6 +12,8 @@ class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_("user"))
     description = models.TextField(verbose_name=_("description"))
 
+    founder = models.BooleanField(default=False, verbose_name=_("founder"))
+
     profile_picture = models.ImageField(null=True, blank=True, upload_to="authors", verbose_name=_("header image"))
 
     def image_tag(self):
@@ -53,6 +55,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=124, verbose_name=_("title"))
     subtitle = models.CharField(max_length=124, verbose_name=_("subtitle"))
+
+    featured = models.BooleanField(default=False, verbose_name=_("featured"))
 
     header_image = models.ImageField(null=True, blank=True, upload_to="articles", verbose_name=_("header image"))
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 11:29+0200\n"
+"POT-Creation-Date: 2019-10-21 21:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,48 +18,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: blog/apps.py:8
+msgid "Blog"
+msgstr ""
+
 #: blog/models.py:12
-msgid "date"
+msgid "user"
 msgstr ""
 
 #: blog/models.py:13
-msgid "author"
+msgid "description"
 msgstr ""
 
 #: blog/models.py:15
-msgid "title"
+msgid "founder"
 msgstr ""
 
-#: blog/models.py:16
-msgid "subtitle"
-msgstr ""
-
-#: blog/models.py:18
+#: blog/models.py:17 blog/models.py:61
 msgid "header image"
 msgstr ""
 
-#: blog/models.py:23
+#: blog/models.py:22
+msgid "Profile Picture"
+msgstr ""
+
+#: blog/models.py:27 blog/templates/author.html:5
+msgid "Author"
+msgstr ""
+
+#: blog/models.py:28
+msgid "Authors"
+msgstr ""
+
+#: blog/models.py:35 blog/models.py:53
+msgid "date"
+msgstr ""
+
+#: blog/models.py:36
+msgid "name"
+msgstr ""
+
+#: blog/models.py:37
+msgid "email"
+msgstr ""
+
+#: blog/models.py:39
+msgid "read"
+msgstr ""
+
+#: blog/models.py:41
+msgid "message"
+msgstr ""
+
+#: blog/models.py:45
+msgid "Comment"
+msgstr ""
+
+#: blog/models.py:46
+msgid "Comments"
+msgstr ""
+
+#: blog/models.py:54
+msgid "author"
+msgstr ""
+
+#: blog/models.py:56
+msgid "title"
+msgstr ""
+
+#: blog/models.py:57
+msgid "subtitle"
+msgstr ""
+
+#: blog/models.py:59
+msgid "featured"
+msgstr ""
+
+#: blog/models.py:66
 msgid "Header Image"
 msgstr ""
 
-#: blog/models.py:26
+#: blog/models.py:69
 msgid "text"
 msgstr ""
 
-#: blog/models.py:30
+#: blog/models.py:73
 msgid "Article"
 msgstr ""
 
-#: blog/models.py:31
+#: blog/models.py:74
 msgid "Articles"
 msgstr ""
 
-#: blog/templates/about.html:5 blog/templates/contact.html:5
-#: blog/templates/top_navigation.html:22
+#: blog/templates/about.html:6 blog/templates/top_navigation.html:23
+msgid "About"
+msgstr ""
+
+#: blog/templates/about.html:21
+msgid "About TrampAway"
+msgstr ""
+
+#: blog/templates/about.html:22 blog/templates/author.html:21
+msgid "This is what we do."
+msgstr ""
+
+#: blog/templates/about.html:35
+msgid ""
+"Here in TrampAway we have always believed that traveling is a life-changing "
+"experience that helps youbroaden your horizons, as such, our main objective "
+"is to help you travel the world without spending a single penny, well maybe "
+"that's a bit of an exaggeration, but at least we aim to make international "
+"travel more accessible."
+msgstr ""
+
+#: blog/templates/about.html:36
+msgid ""
+"We hope that with our help you'll be able to make your dream trip a reality."
+msgstr ""
+
+#: blog/templates/about.html:38 blog/templates/author.html:20
+msgid "Meet the Authors"
+msgstr ""
+
+#: blog/templates/about.html:49
+msgid "View Profile"
+msgstr ""
+
+#: blog/templates/author.html:52
+msgid "Latest Posts"
+msgstr ""
+
+#: blog/templates/contact.html:5 blog/templates/contact.html:19
+#: blog/templates/top_navigation.html:26
 msgid "Contact"
 msgstr ""
 
-#: blog/templates/index.html:5 blog/templates/top_navigation.html:16
+#: blog/templates/contact.html:20
+msgid "If you have any questions or suggestions don't hesitate to contact us"
+msgstr ""
+
+#: blog/templates/contact.html:38
+msgid "Name"
+msgstr ""
+
+#: blog/templates/contact.html:40
+msgid "Please enter your name."
+msgstr ""
+
+#: blog/templates/footer.html:9
+msgid "About Us"
+msgstr ""
+
+#: blog/templates/footer.html:16
+msgid "Follow Us"
+msgstr ""
+
+#: blog/templates/index.html:5 blog/templates/top_navigation.html:20
 msgid "Home"
 msgstr ""
 
@@ -67,16 +181,20 @@ msgstr ""
 msgid "Your 101 Guide to Cheap Travelling"
 msgstr ""
 
-#: blog/templates/index.html:39
-msgid "Read full article"
+#: blog/templates/index.html:101 blog/templates/post.html:71
+msgid "Featured Posts"
 msgstr ""
 
-#: blog/templates/post.html:21
-msgid "Posted by"
+#: blog/templates/post.html:54
+msgid "profile picture"
 msgstr ""
 
-#: blog/templates/top_navigation.html:19
-msgid "About"
+#: blog/views.py:75
+msgid "Thank you for contacting us"
+msgstr ""
+
+#: blog/views.py:78
+msgid "Form not valid."
 msgstr ""
 
 #: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7

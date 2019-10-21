@@ -7,8 +7,8 @@ from blog.models import Post, Author, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_filter = ('author',)
-    list_display = ('date', 'title', 'author')
+    list_filter = ('author', 'featured',)
+    list_display = ('date', 'title', 'author', "featured")
     list_display_links = ('title',)
     ordering = ('-date',)
     readonly_fields = ('image_tag',)
@@ -18,8 +18,9 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('user',)
-    list_display_links = ('user',)
+    list_filter = ('founder',)
+    list_display = ('user', 'founder',)
+    list_display_links = ('user', 'founder')
     ordering = ('-user',)
     readonly_fields = ('image_tag',)
 

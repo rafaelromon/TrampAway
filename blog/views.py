@@ -30,16 +30,20 @@ def index(request):
         upper_limit = pages_number
 
     nav_pages = list(range(lower_limit, upper_limit + 1))
+    founder = Author.objects.get(founder=True)
+    featured_posts = Post.objects.all().filter(featured=True)
 
-    context = {"posts": posts, "current_page": current_page, "nav_pages": nav_pages, "pages_number": pages_number}
+    context = {"posts": posts, "current_page": current_page, "nav_pages": nav_pages, "pages_number": pages_number,
+               "founder": founder, "featured_posts": featured_posts}
 
     return render(request, "index.html", context)
 
 
 def view_post(request, post_id):
     post = Post.objects.get(id=post_id)
+    featured_posts = Post.objects.all().filter(featured=True)
 
-    context = {"post": post}
+    context = {"post": post, "featured_posts": featured_posts}
 
     return render(request, "post.html", context)
 
